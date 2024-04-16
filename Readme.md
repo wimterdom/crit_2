@@ -148,22 +148,23 @@
         2. Log into Admin
            ![image](./doc_fig/admin_login.png)
            ![image](./doc_fig/admin_home.png)
-        4. Press `Register Voter` and enter details to register a new voter. Remember or note down the `Voter ID` that you will receive on successful registration.
+        3. Press `Register Voter` and enter details to register a new voter. Remember or note down the `Voter ID` that you will receive on successful registration.
            ![image](./doc_fig/reg_success.png)
-        6. Press `Home` to return to the Home.
+        4. Press `Home` to return to the Home.
            ![image](./doc_fig/home_server.png)
-        8. Open terminal & run `python3 Server.py` to start server. At the same time, the server will generate a private key and a public key, and listen on the port to wait for a connection.
+        5. Open terminal & run `python3 Server.py` to start server. At the same time, the server will generate a private key and a public key, and listen on the port to wait for a connection.
+           ![image](./doc_fig/server_wait.png)
     - Client
         1. Open terminal & run `python3 homePage.py` to open Home Page Window. When the client connects to server, the server will transfer the public key to client.
            ![image](./doc_fig/client_home.png)
-        3. Now, press `Voter Login` to open the voter login page.
+        2. Now, press `Voter Login` to open the voter login page.
            ![image](./doc_fig/voter_login.png)
-        5. Enter the login details and you are redirected to the Voting Page. You will receive an error message if the Voter is invalid or has already cast a vote.
+        3. Enter the login details and you are redirected to the Voting Page. You will receive an error message if the Voter is invalid or has already cast a vote.
            ![image](./doc_fig/voter_error.png)
-        7. Cast a Vote. Client will encrypt the vote result by public key and transfer the result to server. Now on receiving a success message, press home to return to home.
+        4. Cast a Vote. Client will encrypt the vote result by public key and transfer the result to server. Now on receiving a success message, press home to return to home.
            ![image](./doc_fig/voter_vote.png)
            ![image](./doc_fig/vote_success.png)
-        9. Login voter again to see the votes results.
+        5. Login voter again to see the votes results.
            ![image](./doc_fig/voter_login.png)
            ![image](./doc_fig/voter_show.png)
 
