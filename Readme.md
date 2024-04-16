@@ -8,7 +8,7 @@
 - OS
     - Linux系列作業系統
         - Linux
-        - Ubuntu 22.04
+        - Ubuntu 22.04 (Recommend)
         - Kail
         - etc
 - python
@@ -22,48 +22,86 @@
       ```sh=
       chmod +x requirement.sh
       sudo ./requirement.sh
+
       ```
-
-## 02-How to Run
-### server side
-1. Open terminal/command prompt on your PC.
-2. Navigate to `server` folder
-3. Run command : `python3 Server.py`
-
-### client side
-1. Open terminal/command prompt on your PC
-2. Navigate to `client` folder
-3. Run command : `python3 homepage.py`
-
-## 03-How to Login
-### server side
-- Admin Login :
-    - Admin ID : `Admin`
-    - Password : `admin`
-### client side
-- Client Login:
-    - Voter Login:
-        - Server should be running for voters to be able to login.
-        - Already registered voter IDs : 10001 ~
-        - Password (for already registered voters) : abcd
-        - or you can ask server admin to check `database/voterList.csv` to get the ID and password
-
-## 04-Workflow Description
-- Inorder Description to run & test this project :
-    - Server
-        1. Open terminal & run `python3 homePage.py` to open Home Page Window.
-        2. Log into Admin
-        3. Press `Register Voter` and enter details to register a new voter. Remember or note down the `Voter ID` that you will receive on successful registration.
-        5. Press `Home` to return to the Home.
-        6. Open terminal & run `python3 Server.py` to start server. At the same time, the server will generate a private key and a public key, and listen on the port to wait for a connection.
-    - Client
-        1. Open terminal & run `python3 homePage.py` to open Home Page Window. When the client connects to server, the server will transfer the public key to client.
-        2. Now, press `Voter Login` to open the voter login page.
-        3. Enter the login details and you are redirected to the Voting Page. You will receive an error message if the Voter is invalid or has already cast a vote.
-        4. Cast a Vote. Client will encrypt the vote result by public key and transfer the result to server. Now on receiving a success message, press home to return to home.
-        5. Login voter again to see the votes results.
-
-## 05-功能說明
+## 02-系統說明
+### 架構                                                                                                                                                   
+├── LICENSE                                                                                                                                                    
+├── Readme.md                                                                                                                                                  
+├── client                                                                                                                                                    
+│   ├── Admin.py                                                               
+│   ├── Report.pdf                                                             
+│   ├── ShowVotes.py                                                           
+│   ├── VotingPage.py                                                          
+│   ├── __pycache__                                                            
+│   │   ├── Admin.cpython-310.pyc                                              
+│   │   ├── ShowVotes.cpython-310.pyc                                          
+│   │   ├── VotingPage.cpython-310.pyc                                         
+│   │   ├── admFunc.cpython-310.pyc                                            
+│   │   ├── dframe.cpython-310.pyc                                             
+│   │   ├── registerVoter.cpython-310.pyc                                      
+│   │   └── voter.cpython-310.pyc                                              
+│   ├── admFunc.py                                                             
+│   ├── database                                                               
+│   │   └── cand_list.csv                                                      
+│   ├── dframe.py                                                              
+│   ├── homePage.py                                                            
+│   ├── img                                                                    
+│   │   ├── dpp.jpg                                                            
+│   │   ├── kmt.jpg                                                            
+│   │   ├── kp.jpg                                                             
+│   │   ├── lin.jpg                                                            
+│   │   └── lisa.jpg                                                           
+│   ├── public_key.pem                                                         
+│   ├── registerVoter.py                                                       
+│   ├── solve.py                                                               
+│   └── voter.py                                                               
+├── doc_fig                                                                    
+│   ├── admin_home.png                                                         
+│   ├── admin_login.png                                                        
+│   ├── admin_show.png                                                         
+│   ├── client_home.png                                                        
+│   ├── encrypt_vote.png                                                       
+│   ├── home_server.png                                                        
+│   ├── id_login.png                                                           
+│   ├── non-encrypt_vote.png                                                   
+│   ├── reg_success.png                                                        
+│   ├── reg_voter.png                                                          
+│   ├── vote_success.png                                                       
+│   ├── voter_login.png                                                        
+│   ├── voter_show.png                                                         
+│   └── voter_vote.png                                                         
+├── requirement.sh                                                             
+└── server                                                                     
+    ├── Admin.py                                                               
+    ├── Server.py                                                              
+    ├── VotingPage.py                                                          
+    ├── __pycache__                                                            
+    │   ├── Admin.cpython-310.pyc                                              
+    │   ├── VotingPage.cpython-310.pyc                                         
+    │   ├── admFunc.cpython-310.pyc                                            
+    │   ├── dframe.cpython-310.pyc                                             
+    │   ├── dframe.cpython-38.pyc                                              
+    │   ├── key.cpython-310.pyc                                                
+    │   ├── registerVoter.cpython-310.pyc                                      
+    │   └── voter.cpython-310.pyc                                              
+    ├── admFunc.py                                                             
+    ├── database                                                               
+    │   ├── cand_list.csv                                                      
+    │   └── voterList.csv                                                      
+    ├── dframe.py                                                              
+    ├── homePage.py                                                            
+    ├── img                                                                    
+    │   ├── dpp.jpg                                                            
+    │   ├── kmt.jpg                                                            
+    │   ├── kp.jpg                                                             
+    │   ├── lin.jpg                                                            
+    │   └── lisa.jpg                                                           
+    ├── private_key.pem                                                        
+    ├── public_key.pem                                                         
+    ├── registerVoter.py                                                       
+    └── voter.py 
+### 功能
 1. Project區分server及client兩個部分
 2. Server端有以下功能
     - 管理員功能
@@ -89,31 +127,43 @@
         - 選票已加密
         ![選票已加密](./doc_fig/encrypt_vote.png)
 
-## 06- Stepwise Output / Test Cases
-- Homepage
-    - server
-    ![image](./doc_fig/home_server.png)
-    - client
-    ![image](./doc_fig/client_home.png)
+## 03-Login ID & password
+### server side
+- Admin Login :
+    - Admin ID : `Admin`
+    - Password : `admin`
+### client side
+- Client Login:
+    - Voter Login:
+        - Server should be running for voters to be able to login.
+        - Already registered voter IDs : 10001 ~
+        - Password (for already registered voters) : abcd
+        - or you can ask server admin to check `database/voterList.csv` to get the ID and password
 
-- Admin
-    - Login
-         ![image](./doc_fig/admin_login.png)
-    - Home
-        ![image](./doc_fig/admin_home.png)
-    - Register Voter
-        ![image](./doc_fig/reg_voter.png)
-    - Register success
-        ![image](./doc_fig/reg_success.png)
-
-- Client
-    - Voter Login
-        ![image](./doc_fig/voter_login.png)
-    - Vote
-        ![image](./doc_fig/voter_vote.png)
-    - Vote Success
-        ![image](./doc_fig/vote_success.png)
-    - Login again to see Results
-        ![image](./doc_fig/voter_login.png)
-        ![image](./doc_fig/voter_show.png)   
+## 04-Workflow Description
+- Inorder Description to run & test this project :
+    - Server
+        1. Open terminal & run `python3 homePage.py` to open Home Page Window.
+           ![image](./doc_fig/home_server.png)
+        2. Log into Admin
+           ![image](./doc_fig/admin_login.png)
+           ![image](./doc_fig/admin_home.png)
+        4. Press `Register Voter` and enter details to register a new voter. Remember or note down the `Voter ID` that you will receive on successful registration.
+           ![image](./doc_fig/reg_success.png)
+        6. Press `Home` to return to the Home.
+           ![image](./doc_fig/home_server.png)
+        8. Open terminal & run `python3 Server.py` to start server. At the same time, the server will generate a private key and a public key, and listen on the port to wait for a connection.
+    - Client
+        1. Open terminal & run `python3 homePage.py` to open Home Page Window. When the client connects to server, the server will transfer the public key to client.
+           ![image](./doc_fig/client_home.png)
+        3. Now, press `Voter Login` to open the voter login page.
+           ![image](./doc_fig/voter_login.png)
+        5. Enter the login details and you are redirected to the Voting Page. You will receive an error message if the Voter is invalid or has already cast a vote.
+           ![image](./doc_fig/voter_error.png)
+        7. Cast a Vote. Client will encrypt the vote result by public key and transfer the result to server. Now on receiving a success message, press home to return to home.
+           ![image](./doc_fig/voter_vote.png)
+           ![image](./doc_fig/vote_success.png)
+        9. Login voter again to see the votes results.
+           ![image](./doc_fig/voter_login.png)
+           ![image](./doc_fig/voter_show.png)
 
