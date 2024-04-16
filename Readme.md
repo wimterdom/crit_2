@@ -93,3 +93,8 @@
            ![image](./doc_fig/voter_login.png)
            ![image](./doc_fig/voter_show.png)
 
+## 05-影片
+- 詳細說明
+  [Crit2解說](https://youtu.be/5gf2Z3tw0Q4)
+- 實作demo
+  [crit2實作](https://youtu.be/Rv2LVvsrDO0)
