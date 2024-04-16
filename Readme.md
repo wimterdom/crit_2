@@ -18,7 +18,7 @@
     - socket
 
 - you can install the python library by typing the command below
-    - Navigate to Project folder
+    - Navigate to Project(code) folder
     - `sudo ./requirement.sh`
 
 ## 02-How to Run
