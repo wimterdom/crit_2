@@ -1,0 +1,11 @@
+,voter_id,Name,Gender,City,Email,Passw,hasVoted
+0,10001,Deep,Male,Gandhinagar,deep@gmail.com,abcd,1
+1,10002,Prachi,Female,Surat,parchi@yahoo.com,abcd,0
+2,10003,Het,Male,Surat,het@hotmail.com,abcd,0
+3,10004,Shivanshi,Female,Gandhinagar,shivanshi@gmail.com,abcd,0
+4,10005,Rohan,Male,Bengaluru,rohan@yahoo.com,abcd,0
+5,10006,Will,Male,Surat,will@yahoo.com,abcd,0
+6,10007,John,Male,Taipei,john@hotmail.com,abcd,0
+7,10008,jack,Male,Tainan,jack@hotmail.com,abcd,0
+8,10009,Mary,Female,Taipei,mary@gmail.com,abcd,0
+9,10010,Peter,Male,Taipei,peter@gmail.com,abcd,1
