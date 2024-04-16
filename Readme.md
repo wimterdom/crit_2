@@ -59,22 +59,22 @@
 1. Project區分server及client兩個部分
 2. Server端有以下功能
     - 管理員功能
-    - 註冊投票者
+    - 註冊投票者  
         資料儲存在/server/database/voterList.csv
-    - 檢視及更新投票數據
+    - 檢視及更新投票數據  
         資料儲存在/server/database/cand_list.csv
     - 生成private key 及public key
 3. Client端有以下功能
     - 投票者登入
     - 投票
-    - 檢視投票數據
+    - 檢視投票數據  
         同步server端cand_list.csv，並顯示投票數據
 4. 線上投票必須保證兩件事
-    - 身分驗證
+    - 身分驗證  
     投票者一律由server端註冊，server再將登入帳密以電子郵件或其他方式告知投票者。
     ![身分驗證](./doc_fig/id_login.png)
 
-    - 投票保密
+    - 投票保密  
     我們必須保證投票者投完票後，其結果在傳輸過程中必須經過加密保護其投票內容不外流及修改，確保其完整性(Integrity)及機密性 (Confidentiality)。因此，我們透過RSA加密方式，投票者在登入系統後會從Server端接受public key。投票者在完成投票後使用public key進行加密，server收到後使用private key解密，並將結果更新到統計數據。
         - 選票未加密
     ![選票未加密](./doc_fig/non-encrypt_vote.png)
