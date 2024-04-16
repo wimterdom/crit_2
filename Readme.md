@@ -5,6 +5,12 @@
 - Name : 張翔瑋, 林峻賢, 林哲偉
 
 ## 01-Requirement
+- OS
+    - Linux系列作業系統
+        - Linux
+        - Ubuntu 22.04
+        - Kail
+        - etc
 - python
     - pandas
     - tkinter
