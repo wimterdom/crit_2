@@ -73,10 +73,11 @@
            ![image](./doc_fig/admin_login.png)
            ![image](./doc_fig/admin_home.png)
         3. Press `Register Voter` and enter details to register a new voter. Remember or note down the `Voter ID` that you will receive on successful registration.
+           ![image](./doc_fig/reg_voter.png)
            ![image](./doc_fig/reg_success.png)
-        4. Press `Home` to return to the Home.
+        5. Press `Home` to return to the Home.
            ![image](./doc_fig/home_server.png)
-        5. Open terminal & run `python3 Server.py` to start server. At the same time, the server will generate a private key and a public key, and listen on the port to wait for a connection.
+        6. Open terminal & run `python3 Server.py` to start server. At the same time, the server will generate a private key and a public key, and listen on the port to wait for a connection.
            ![image](./doc_fig/server_wait.png)
     - Client
         1. Open terminal & run `python3 homePage.py` to open Home Page Window. When the client connects to server, the server will transfer the public key to client.
