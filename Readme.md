@@ -43,7 +43,7 @@
         - Server should be running for voters to be able to login.
         - Already registered voter IDs : 10001 ~
         - Password (for already registered voters) : abcd
-        - or you can ask server to check `database/voterList.csv` to get the ID and password
+        - or you can ask server admin to check `database/voterList.csv` to get the ID and password
 
 ## 04-Workflow Description
 - Inorder Description to run & test this project :
