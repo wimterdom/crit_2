@@ -1,7 +1,5 @@
 # Cryptography Engineering Crit. 2 Online Voting System Implement
 
-[TOC]
-
 - 系所：資訊科學工程研究所(博)
 - student id : 412551016,412551010, 411551012
 - Name : 張翔瑋, 林峻賢, 林哲偉
